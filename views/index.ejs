@@ -1,9 +1,19 @@
 <html lang="en">
 <%- include('./partials/header.ejs') %>
 <body>
+  <%- include("./partials/nav.ejs") %>
   <div>
-    <h2>Workout Logger</h2>
-    <p>Welcome to workout logger!</p>
+    <% if (workouts.length > 0) { %>
+      <% workouts.forEach(workout => { %>
+
+        <p class="date"><%= workout.date %></h3>
+        <p class="time"><%= workout.time %></p>
+        <p class="notes"><%= workout.notes %></p>
+
+      <% }) %>
+    <% } else { %>
+      <p>There are no workouts to display...</p>
+    <% } %>
   </div>
   <%- include('./partials/footer.ejs') %>
 </body>
