@@ -27,7 +27,6 @@ const workout_add_get =   (req, res) => {
 
 const workout_add_post = (req, res) => {
   const workout = new Workout(req.body);
-
   workout.save()
     .then((result) => {
       res.redirect('/workouts');

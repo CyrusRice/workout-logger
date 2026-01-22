@@ -8,8 +8,10 @@
         <div class="single-div">
           <a class="single-link" href="/workouts/<%= workout._id %>">
             <h3 class="date"><%= workout.date %></h3>
-            <p class="time"><%= workout.time %></p>
-            <p class="notes"><%= workout.notes %></p>
+            <p class="time"><%= workout.time %></p><br>
+            <% workout.notes.split(/(\r?\n)|\r/).forEach(line => { %>
+              <p class="notes"><%= line %></p>
+            <% }) %>
           </a>
         </div>
       <% }) %>

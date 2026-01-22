@@ -5,11 +5,16 @@
   <%- include("../partials/nav.ejs") %>
 
   <div class="details content">
-    <h2><%= workout.date %></h2>
-    <h2><%= workout.time %></h2>
-    <div class="content">
-      <p><%= workout.notes %></p>
-    </div>
+    <h3>Date:</h3>
+    <p><%= workout.date %></p><br>
+    <h3>Time:</h3>
+    <p><%= workout.time %></p><br>
+   
+      <h3>Notes:</h3>
+      <% workout.notes.split(/(\r?\n)|\r/).forEach(line => { %>
+        <p class="notes"><%= line %></p>
+      <% }) %>
+
     <a class="delete" data-doc="<%= workout._id %>">delete</a>
   </div>
 
