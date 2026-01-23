@@ -3,17 +3,18 @@
 
 <body>
   <%- include("../partials/nav.ejs") %>
-
-  <div class="add-workout">
-    <form action="/workouts" method="POST">
-      <label for="date">Date:</label>
-      <input type="text" id="date" name="date" required>
-      <label for="time">Time:</label>
-      <input type="text" id="time" name="time" required>
-      <label for="notes">Notes:</label>
-      <textarea id="notes" name="notes" required></textarea>
-      <button>Submit</button>
-    </form>
+  <div class="testy">
+    <div class="add-workout">
+      <form action="/workouts" method="POST">
+        <label for="date">Date:</label>
+        <input type="text" id="date" name="date" required>
+        <label for="time">Time:</label>
+        <input type="text" id="time" name="time" required>
+        <label for="notes">Notes:</label>
+        <textarea id="notes" name="notes" required></textarea>
+        <button>Submit</button>
+      </form>
+    </div>
   </div>
 
   <%- include("../partials/footer.ejs") %>

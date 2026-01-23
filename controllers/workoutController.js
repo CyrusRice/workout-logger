@@ -54,3 +54,6 @@ module.exports = {
   workout_add_post,
   workout_delete
 }
+
+// Update nav menu + other stuff as needed for 
+// responsiveness. Then add readme

@@ -3,19 +3,21 @@
 
 <body>
   <%- include("../partials/nav.ejs") %>
+  <div class="details-container">
+    <div class="details content">
+      <h3>Date:</h3>
+      <p><%= workout.date %></p><br>
+      <h3>Time:</h3>
+      <p><%= workout.time %></p><br>
+    
+        <h3>Notes:</h3>
+        <% workout.notes.split(/(\r?\n)|\r/).forEach(line => { %>
+          <p class="notes"><%= line %></p>
+        <% }) %>
+        <br>
 
-  <div class="details content">
-    <h3>Date:</h3>
-    <p><%= workout.date %></p><br>
-    <h3>Time:</h3>
-    <p><%= workout.time %></p><br>
-   
-      <h3>Notes:</h3>
-      <% workout.notes.split(/(\r?\n)|\r/).forEach(line => { %>
-        <p class="notes"><%= line %></p>
-      <% }) %>
-
-    <a class="delete" data-doc="<%= workout._id %>">delete</a>
+      <a class="delete" data-doc="<%= workout._id %>">delete</a>
+    </div>
   </div>
 
   <%- include("../partials/footer.ejs") %>
