@@ -97,6 +97,7 @@
     .add-workout form{
       max-width: 400px;
       margin: 0 auto;
+      padding: 0 100px;
     }
     .add-workout input,
     .add-workout textarea{
@@ -141,8 +142,15 @@
       .site-title{
         padding-bottom: 10px;
       }
-      .description, .title{
+      .description, 
+      .title, 
+      .empty, 
+      .add-workout form,
+      .workouts{
         text-align: center;
+      }
+      label{
+        text-align: left;
       }
     }
 
@@ -153,5 +161,8 @@
       }
       .delete{
         position: relative;
+      }
+      .add-workout form{
+        padding: 0 50px;
       }
     }
