@@ -1,5 +1,6 @@
 const Workout = require('../models/workout');
 
+// Main page with list of all workouts
 const workout_index = (req, res) => {
   Workout.find().sort({ createdAt: -1 })
     .then((result) => {
@@ -10,6 +11,7 @@ const workout_index = (req, res) => {
     })
 };
 
+// Details page for certain workout selected
 const workout_details = (req, res) => {
   const id = req.params.id;
   Workout.findById(id)
@@ -21,10 +23,12 @@ const workout_details = (req, res) => {
     })
 };
 
+// When clicking add on nav bar
 const workout_add_get =   (req, res) => {
   res.render('workouts/add', { title : 'Add' });
 };
 
+// After submitting to create a new workout
 const workout_add_post = (req, res) => {
   const workout = new Workout(req.body);
   workout.save()
@@ -36,6 +40,7 @@ const workout_add_post = (req, res) => {
     })
 };
 
+// When clicking to delete workout
 const workout_delete = (req, res) => {
   const id = req.params.id;
   Workout.findByIdAndDelete(id)
@@ -54,6 +59,3 @@ module.exports = {
   workout_add_post,
   workout_delete
 }
-
-// Update nav menu + other stuff as needed for 
-// responsiveness. Then add readme
